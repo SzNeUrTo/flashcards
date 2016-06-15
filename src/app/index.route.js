@@ -6,6 +6,12 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
+    })
+    .state('vocablist', {
+      url: '/vocablist',
+      templateUrl: 'app/vocablist/vocablist.html',
+      controller: 'VocabListController',
+      controllerAs: 'vocablist'
     });
 
   $urlRouterProvider.otherwise('/');

@@ -1,4 +1,4 @@
-export class MainController {
+export class VocabListController {
   constructor () {
     'ngInject';
 

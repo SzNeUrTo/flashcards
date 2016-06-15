@@ -16,10 +16,10 @@ export function NavbarDirective() {
 }
 
 class NavbarController {
-  constructor (moment) {
+  constructor ($state, AppConstant) {
     'ngInject';
 
-    // "this.creationDate" is available by directive option "bindToController: true"
-    this.relativeDate = moment(this.creationDate).fromNow();
+    this.menu = AppConstant.menu;
+    this.currentState = $state.current.name;
   }
 }

@@ -8,14 +8,10 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="/practice">Practice</a></li>
-        <li><a ng-href="/vocablist">Vocab List</a></li>
-        <!-- <li><a ng-href="#">Contact</a></li> -->
+        <li ui-sref-active="active" class="{{link.state == vm.currentState ? 'active' : ''}}" ng-repeat="link in vm.menu">
+          <a ui-sref="{{link.state}}" >{{link.text}}</a>
+        </li>
       </ul>
-
-<!--       <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul> -->
     </div>
   </div>
 </nav>
