@@ -18,15 +18,15 @@
     </thead>
     <tbody>
       <tr ng-repeat="vocab in v.vocablist">
-        <td>input</td>
+        <td class="text-center" style="width: 60px;"><input type="checkbox" ng-model="vocab.selected"></td>
         <td>{{vocab.word}}</td>
-        <td>แมว</td>
-        <td>น่ารัก</td>
-        <td>เมี้ยวๆ</td>
-        <td>
-          	<div class="btn btn-xs btn-primary" ng-click="v.edit(vocab.index)">EDIT</div>
-            <div class="btn btn-xs btn-danger" ng-click="v.delete(vocab.index)" confirm="Delete Word: {{vocab.word}}?">DELETE</div>	
-        </td>  
+        <td>{{vocab.translate}}</td>
+        <td>{{vocab.description}}</td>
+        <td>{{vocab.tag}}</td>
+        <td style="width: 120px;">
+          	<div class="btn btn-xs btn-primary" ng-click="v.edit($index)">EDIT</div>
+            <div class="btn btn-xs btn-danger" ng-click="v.delete($index)" confirm="Delete Word: {{vocab.word}}?">DELETE</div>	
+        </td>
       </tr>
     </tbody>
   </table>

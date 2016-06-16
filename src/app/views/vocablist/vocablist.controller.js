@@ -4,43 +4,57 @@ export class VocabListController {
 
     this.$uibModal = $uibModal;
     this.vocablist = [{
-      select: '',
+      selected: '',
       word: 'Hello',
+      translate: '',
+      description: '',
+      tag: ''
+    },
+    {
+      selected: '',
+      word: 'World',
       translate: '',
       description: '',
       tag: ''
     }];
   }
 
-  modalAddEdit(word) {
+  modalAddEdit(index, isNew) {
+    let vocab = this.vocablist[index];
     let modalInstance = this.$uibModal.open({
       animation: true,
       templateUrl: 'app/views/vocab-edit-modal/vocab-edit-modal.html',
       controller: 'VocabEditModalController',
       size: 'sm',
       resolve: {
-        word: () => {
-          return word;
+        vocab: () => {
+          return isNew ? {} : vocab;
         }
       }
     });
 
     modalInstance.result.then((updatedVocab) => {
-      console.log(updatedVocab);
+      if (isNew) {
+        this.vocablist.push(updatedVocab);
+      }
+      else {
+        this.vocablist[index] = updatedVocab;
+      }
     }, () => {
       console.log('Modal dismissed at: ' + new Date());
     });
   }
 
   edit(index) {
-    this.modalAddEdit(this.vocabList[index]);
+    this.modalAddEdit(index, false);
   }
 
   add() {
-    this.modalAddEdit(false);
+    this.modalAddEdit(null, true);
   }
 
-  delete() {
+  delete(index) {
     // confirm angularjs
+    _.pullAt(this.vocablist, [index]);
   }
 }

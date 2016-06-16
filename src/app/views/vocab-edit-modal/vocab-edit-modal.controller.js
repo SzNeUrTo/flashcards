@@ -1,15 +1,14 @@
 export class VocabEditModalController {
-  constructor ($uibModalInstance, $scope, $log, word) {
+  constructor ($scope, $uibModalInstance, vocab) {
     'ngInject';
 
-    this.word = word ? _.cloneDeep(word) : {};
-    this.$scope = $scope;
+    $scope.vocab = _.cloneDeep(vocab);
 
-  	this.$scope.ok = function () {
-  		$uibModalInstance.close(this.word);
+  	$scope.ok = function () {
+  		$uibModalInstance.close($scope.vocab);
   	};
 
-  	this.$scope.cancel = function () {
+  	$scope.cancel = function () {
   		$uibModalInstance.dismiss('cancel');
   	};
   }
