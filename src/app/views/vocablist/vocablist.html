@@ -1,3 +1,34 @@
+
 <div class="container">
-  <h1>VocabList</h1>
+  <div class="row">
+    <h1 class="col-sm-6">
+      Vocab List
+    </h1>
+    <div class="col-sm-6 text-right">
+      <div class="btn btn-primary addbtn" ng-click="add()">Add Vocab</div>
+    </div>
+  </div>
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <th>Select</th>
+      <th>Vocab (EN)</th>
+      <th>Translate (TH)</th>
+      <th>Description</th>
+      <th>Tag</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in [1]">
+        <td>input</td>
+        <td>Cat</td>
+        <td>แมว</td>
+        <td>น่ารัก</td>
+        <td>เมี้ยวๆ</td>
+        <td>
+          	<div class="btn btn-xs btn-primary" ng-click="edit(x.id)">EDIT</div>
+            <div class="btn btn-xs btn-danger" ng-click="delete(x.id)" confirm="Delete Vocab: {{word.english}}?">DELETE</div>	
+        </td>  
+      </tr>
+    </tbody>
+  </table>
 </div>
