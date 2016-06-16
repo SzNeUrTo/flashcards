@@ -11,7 +11,7 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/vocablist',
       templateUrl: 'app/views/vocablist/vocablist.html',
       controller: 'VocabListController',
-      controllerAs: 'vocablist'
+      controllerAs: 'v'
     });
 
   $urlRouterProvider.otherwise('/');
