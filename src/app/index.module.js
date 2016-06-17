@@ -12,7 +12,7 @@ import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 import AppConstant from '../app/constants/app-constant';
 
-angular.module('flashcards', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr'])
+angular.module('flashcards', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr', 'angular-confirm'])
   .constant('malarkey', malarkey)
   .constant('moment', moment)
   .constant('AppConstant', AppConstant)
