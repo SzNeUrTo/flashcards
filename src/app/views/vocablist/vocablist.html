@@ -17,7 +17,7 @@
       <th>Action</th>
     </thead>
     <tbody>
-      <tr ng-repeat="vocab in v.vocablist">
+      <tr ng-repeat="vocab in v.vocablist track by $index">
         <td class="text-center" style="width: 60px;"><input type="checkbox" ng-model="vocab.show"></td>
         <td>{{vocab.word}}</td>
         <td>{{vocab.translate}}</td>

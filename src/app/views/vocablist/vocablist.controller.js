@@ -1,22 +1,15 @@
 export class VocabListController {
-  constructor ($uibModal) {
+  constructor ($uibModal, AppConstant) {
     'ngInject';
 
+    this.CONST = AppConstant;
     this.$uibModal = $uibModal;
-    this.vocablist = [{
-      show: true,
-      word: 'Hello',
-      translate: '',
-      description: '',
-      tag: ''
-    },
-    {
-      show: false,
-      word: 'World',
-      translate: '',
-      description: '',
-      tag: ''
-    }];
+    let ls = localStorage.getItem('vocablist');
+    this.vocablist = ls ? JSON.parse(ls) : AppConstant.initialVocabList;
+  }
+
+  updateListData() {
+    localStorage.setItem('vocablist', JSON.stringify(this.vocablist));
   }
 
   modalAddEdit(index, isNew) {
@@ -28,7 +21,7 @@ export class VocabListController {
       size: 'sm',
       resolve: {
         vocab: () => {
-          return isNew ? {} : vocab;
+          return isNew ? this.CONST.newVocab : vocab;
         }
       }
     });
@@ -40,6 +33,7 @@ export class VocabListController {
       else {
         this.vocablist[index] = updatedVocab;
       }
+      this.updateListData();
     }, () => {
       console.log('Modal dismissed at: ' + new Date());
     });
@@ -55,5 +49,6 @@ export class VocabListController {
 
   delete(index) {
     _.pullAt(this.vocablist, [index]);
+    this.updateListData();
   }
 }
