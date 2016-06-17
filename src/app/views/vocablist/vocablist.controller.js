@@ -4,14 +4,14 @@ export class VocabListController {
 
     this.$uibModal = $uibModal;
     this.vocablist = [{
-      selected: '',
+      show: true,
       word: 'Hello',
       translate: '',
       description: '',
       tag: ''
     },
     {
-      selected: '',
+      show: false,
       word: 'World',
       translate: '',
       description: '',
@@ -54,7 +54,6 @@ export class VocabListController {
   }
 
   delete(index) {
-    // confirm angularjs
     _.pullAt(this.vocablist, [index]);
   }
 }

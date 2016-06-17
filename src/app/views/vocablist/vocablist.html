@@ -9,7 +9,7 @@
   </div>
   <table class="table table-bordered table-hover table-striped">
     <thead>
-      <th>Select</th>
+      <th>Show</th>
       <th>Word (EN)</th>
       <th>Translate (TH)</th>
       <th>Description</th>
@@ -18,7 +18,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="vocab in v.vocablist">
-        <td class="text-center" style="width: 60px;"><input type="checkbox" ng-model="vocab.selected"></td>
+        <td class="text-center" style="width: 60px;"><input type="checkbox" ng-model="vocab.show"></td>
         <td>{{vocab.word}}</td>
         <td>{{vocab.translate}}</td>
         <td>{{vocab.description}}</td>
