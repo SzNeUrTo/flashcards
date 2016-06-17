@@ -23,9 +23,9 @@
         <td>{{vocab.translate}}</td>
         <td>{{vocab.description}}</td>
         <td>{{vocab.tag}}</td>
-        <td style="width: 120px;">
-          	<div class="btn btn-xs btn-primary" ng-click="v.edit($index)">EDIT</div>
-            <div class="btn btn-xs btn-danger" ng-click="v.delete($index)" confirm="Delete Word: {{vocab.word}}?">DELETE</div>	
+        <td width="120">
+          <button class="btn btn-xs btn-primary" ng-click="v.edit($index)">EDIT</button>
+          <button class="btn btn-xs btn-danger" ng-click="v.delete($index)" confirm="Delete Word: {{vocab.word}}?">DELETE</button>
         </td>
       </tr>
     </tbody>
