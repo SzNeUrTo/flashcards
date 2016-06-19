@@ -6,11 +6,17 @@ export class MainController {
     this.vocablist = ls ? ls : AppConstant.initialVocabList;
     this.size = this.vocablist.length;
     this.showIndex = 0;
-    this.vocab = this.vocablist[this.showIndex];
+    this.showWord = this.vocablist[this.showIndex].word;
+    this.showMeaning = false;
   }
 
   next() {
+    this.showMeaning = false;
     this.showIndex = (this.showIndex + 1) % this.size;
-    this.vocab = this.vocablist[this.showIndex];
+    this.showWord = this.vocablist[this.showIndex].word;
+  }
+
+  translate() {
+    this.showWord = `${this.showWord} (${this.vocablist[this.showIndex].translate})`;
   }
 }

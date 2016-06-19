@@ -1,6 +1,7 @@
 <div class="container"">
   <div class="jumbotron text-center" style="height: 80vh;">
-    <h1>{{main.vocab.word}}</h1>
+    <h1>{{main.showWord}}</h1>
+    <button class="btn btn-danger btn-lg" ng-click="main.translate()">Translate</button>
     <button class="btn btn-success btn-lg" ng-click="main.next()">Next</button>
   </div>
 
