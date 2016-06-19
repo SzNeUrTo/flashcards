@@ -7,16 +7,15 @@ export class MainController {
     this.size = this.vocablist.length;
     this.showIndex = 0;
     this.showWord = this.vocablist[this.showIndex].word;
-    this.showMeaning = false;
   }
 
   next() {
-    this.showMeaning = false;
     this.showIndex = (this.showIndex + 1) % this.size;
     this.showWord = this.vocablist[this.showIndex].word;
   }
 
   translate() {
-    this.showWord = `${this.showWord} (${this.vocablist[this.showIndex].translate})`;
+    let vocab = this.vocablist[this.showIndex];
+    this.showWord = `${vocab.word} (${vocab.translate})`;
   }
 }
